@@ -12,38 +12,24 @@ devtools::use_package('rmarkdown') # add rmarkdown as a required package
 
 
 l_cb_palette <-  list(
-  cb.grey.pal = c(
-    "#E69F00",
-    # Gold,
-    "#56B4E9",
-    # Light blue,
-    "#D55E00",
-    # Red
-    "#009E73",
-    # Green,
-    "#CC79A7",
-    # Violet
-    "#0072B2",
-    # dark blue
-    "#F0E442",
-    # yellow
-    "#999999"  # grey
+  cb.grey.pal = c("#E69F00",    # Gold,
+    "#56B4E9",  # Light blue,
+    "#D55E00",  # Red
+    "#009E73",  # Green,
+    "#CC79A7",  # Violet
+    "#0072B2",  # dark blue
+    "#F0E442",  # yellow
+    "#999999"   # grey
   ),
+
   cb.black.pal = c(
-    "#E69F00",
-    # Gold,
-    "#56B4E9",
-    # Light blue,
-    "#D55E00",
-    # Red
-    "#009E73",
-    # Green,
-    "#CC79A7",
-    # Violet
-    "#0072B2",
-    # dark blue
-    "#F0E442",
-    # yellow
+    "#E69F00",    # Gold,
+    "#56B4E9",    # Light blue,
+    "#D55E00",    # Red
+    "#009E73",    # Green,
+    "#CC79A7",    # Violet
+    "#0072B2",    # dark blue
+    "#F0E442",    # yellow
     "#000000" # black
   ),
 
@@ -61,7 +47,6 @@ l_cb_palette <-  list(
     '#313695'
   ),
 
-
   cb.map.violet.green.pal =
     c(
       '#40004b',
@@ -76,9 +61,8 @@ l_cb_palette <-  list(
       '#1b7837',
       '#00441b'
     )
-
-
 )
+
 devtools::use_data(l_cb_palette, internal = TRUE, overwrite = TRUE)
 
 ### build package with vignettes

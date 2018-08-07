@@ -85,7 +85,8 @@ JBUtilities:::list_plotter(l_cb_palette,
 
 ```
 
-How to use palette with ggplot2
+How to use discrete palette with ggplot2
+
 ```{r cb.grey.pal}
 # Create a plot with legend
 iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Species)) +
@@ -94,6 +95,17 @@ geom_boxplot()
 
 # Print the plot
 print_gg(iris_plot, ShowPlot = TRUE)
+```
+
+How to use continuois palette with ggplot2
+```{r cb.pal.continuous}
+# Create a plot with legend
+iris_plot2 <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Sepal.Length)) +
+  scale_color_gradientn(colours = cb.pal(name = "cb.map.blue.red.pal",  type = "continuous")) +
+geom_point()
+
+# Print the plot
+print_gg(iris_plot2, ShowPlot = TRUE)
 ```
 
 ## ggplot2 theme

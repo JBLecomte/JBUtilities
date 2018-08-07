@@ -11,7 +11,7 @@ cb.pal <- function (name, n, type = c("discrete", "continuous"))
   type <- match.arg(type)
   pal <- l_cb_palette[[name]]
   if (is.null(pal))
-    stop(paste("Palette not found. Available are", l_cb_palette[[name]], sep = ','))
+    stop(paste("Palette not found. Available are", JBUtilities:::names(l_cb_palette), sep = ','))
   if (missing(n)) {
     n <- length(pal)
   }
