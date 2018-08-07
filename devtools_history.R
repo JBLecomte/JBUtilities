@@ -4,7 +4,8 @@ devtools::use_package('knitr') # add knitr as a required package
 devtools::use_package('scales') # add scales as a required package
 devtools::use_package('ggplot2') # add ggplot2 as a required package
 devtools::use_package('rmarkdown') # add rmarkdown as a required package
-
+devtools::use_package('sp') # add sp as a required package
+devtools::use_package('rgdal') # add rgdal as a required package
 
 
 ################################################################################

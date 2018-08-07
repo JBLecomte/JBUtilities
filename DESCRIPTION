@@ -14,5 +14,7 @@ Imports: grid,
     knitr,
     scales,
     ggplot2,
-    rmarkdown
+    rmarkdown,
+    sp,
+    rgdal
 VignetteBuilder: knitr

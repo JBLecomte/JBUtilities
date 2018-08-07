@@ -149,6 +149,7 @@ Standardisation of a numeric variable:
 covariate <- runif(100, 1, 10)
 ## standardisation
 covariate_std <- cov.std(covariate)
+head(covariate_std)
 
 ## the same covariate sampled in a different place but we want the same standardisation
 covariate_grid <- runif(100, 5, 10)
@@ -156,6 +157,7 @@ covariate_grid <- runif(100, 5, 10)
 covariate_grid_std <- cov.std.grid(covariate,
                                    mean_x_obs = mean(covariate),
                                    sd_x_obs = sd(covariate))
+head(covariate_grid_std)
 ```
 
 Create a vector of month in letter from a numeric vector
@@ -185,3 +187,49 @@ vec <- c(NA, 2, NA, 6, 1, NA, 1)
 fill.NA.gaps(vec, firstBack = TRUE)
 
 ```
+
+Compute summarizing statisitics of a vector:
+
+```{r compute summary vec}
+## simulation of a vector
+vec <- runif(100,1,1000)
+
+## compute quantiles
+compute.q025_q25_q50_q75_q975(vec)
+
+## compute min, max, sd and mean
+compute.min_mean_sd_max(vec)
+```
+
+## Spaital data related function
+Transform Longitude and latitude coordinates into NAD83 given the zone
+```{r LongLat2NAD83}
+long <- 65
+lat <- -52
+LongLatToNAD83(x = long, y = lat, zone = 9)
+```
+
+
+# R session related function
+
+Which Operating System is in use.
+
+```{r get os}
+## function to get the os of the computer where R is executed
+get.os()
+```
+
+```{r cat0}
+##  ## Makes it so you can write this:
+X <- 2
+Y <- 3
+cat0("X = ", X, " and Y = ", Y)
+## instead of this:
+cat(paste("X = ", X, " and Y = ", Y, "\n", sep=""))
+```
+
+```{r cat0}
+## install package if not already installed
+InstallPackages('devtools')
+```
+
