@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1533629810609.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5329721",
+    "lastKnownWriteTime" : 1533644790,
+    "last_content_update" : 1533644790213,
+    "path" : "Z:/Projects/JBUtilities/devtools_history.R",
+    "project_path" : "devtools_history.R",
+    "properties" : {
+        "cursorPosition" : "90,0",
+        "scrollLine" : "65"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

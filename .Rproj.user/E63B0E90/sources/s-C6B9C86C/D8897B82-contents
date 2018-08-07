@@ -1,0 +1,84 @@
+---
+title: "How to run JBUtilities functions"
+author: "Jean-Baptiste Lecomte"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+graphics: yes
+vignette: >
+  %\VignetteIndexEntry{How to run JBUtilities functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+  
+  
+```{r setup, include = FALSE}
+library('JBUtilities')
+library('ggplot2')
+knitr::opts_chunk$set(
+collapse = TRUE,
+comment = "#>"
+)
+```
+
+# GGplot2 related function
+
+## Extract legend from ggplot2 object
+
+```{r extract.plot.legend}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
+  geom_boxplot()
+print(iris_plot)
+
+# Extract the legend plot
+iris_plot_legend <- extract.plot.legend(iris_plot,
+                                        Save = TRUE,
+                                        device = 'png',
+                                        width = 5,
+                                        height = 5)
+```
+
+The png file saved:
+
+```{r legend, echo = FALSE, message = FALSE}
+library(knitr)
+knitr::include_graphics('legend.png', dpi = 300)
+```
+
+## Save plot
+
+```{r save.plot}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
+  geom_boxplot()
+
+# Extract the legend plot
+save.plot(iris_plot,
+          Save = TRUE,
+          output = 'Beamer',
+          width = 5,
+          height = 5)
+```
+
+## Print plot
+```{r print.plot}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
+  geom_boxplot()
+
+# Print the plot 
+print.plot(iris_plot, ShowPlot = TRUE)
+```
+
+
+
+## cb.grey.pal palette
+```{r cb.grey.pal}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+scale_color_manual(values = cb.pal(n = 3, name = "cb.grey.pal")) +
+geom_boxplot()
+
+# Print the plot
+print.plot(iris_plot, ShowPlot = TRUE)
+```

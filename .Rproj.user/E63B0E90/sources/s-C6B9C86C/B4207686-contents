@@ -1,0 +1,21 @@
+#' Color platte for color bling ggplot2 plot
+#'
+#' @return a vector of colors for ploting
+#' @import scales
+#'
+#' @examples
+#' @export
+cb.grey.pal <- function(...) {
+  cb_palette <-
+    c(
+      "#E69F00", # Gold,
+      "#56B4E9", # Light blue,
+      "#D55E00", # Red
+      "#009E73", # Green,
+      "#CC79A7", # Violet
+      "#0072B2", # dark blue
+      "#F0E442", # yellow
+      "#999999"  # grey
+    )
+  scales::manual_pal(cb_palette)
+}
