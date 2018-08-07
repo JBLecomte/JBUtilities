@@ -5,13 +5,13 @@ date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 graphics: yes
 vignette: >
-  %\VignetteIndexEntry{How to run JBUtilities functions}
+ %\VignetteIndexEntry{How to run JBUtilities functions}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
   
   
-```{r setup, include = FALSE}
+  ```{r setup, include = FALSE}
 library('JBUtilities')
 library('ggplot2')
 knitr::opts_chunk$set(
@@ -90,8 +90,8 @@ How to use discrete palette with ggplot2
 ```{r cb.grey.pal}
 # Create a plot with legend
 iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Species)) +
-scale_color_manual(values = cb.pal(n = 3, name = "cb.grey.pal")) +
-geom_boxplot()
+  scale_color_manual(values = cb.pal(n = 3, name = "cb.grey.pal")) +
+  geom_boxplot()
 
 # Print the plot
 print_gg(iris_plot, ShowPlot = TRUE)
@@ -102,7 +102,7 @@ How to use continuois palette with ggplot2
 # Create a plot with legend
 iris_plot2 <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Sepal.Length)) +
   scale_color_gradientn(colours = cb.pal(name = "cb.map.blue.red.pal",  type = "continuous")) +
-geom_point()
+  geom_point()
 
 # Print the plot
 print_gg(iris_plot2, ShowPlot = TRUE)
@@ -115,8 +115,8 @@ For one plot :
 ```{r ggplot2.theme}
 # Create a plot with legend
 iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Species)) +
-simple.ggplot2.theme() +
-geom_boxplot()
+  simple.ggplot2.theme() +
+  geom_boxplot()
 
 # Print the plot
 print_gg(iris_plot, ShowPlot = TRUE)
@@ -129,14 +129,59 @@ theme_set(simple.ggplot2.theme())
 
 # Create a plot with legend
 iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Species)) +
-geom_boxplot()
+  geom_boxplot()
 print_gg(iris_plot, ShowPlot = TRUE)
 
 # Create a plot with legend
 iris_plot2 <- ggplot(data = iris, aes(x = Species, y = Sepal.Length, color = Species)) +
-geom_boxplot()
+  geom_boxplot()
 
 # Print the plot
 print_gg(iris_plot2, ShowPlot = TRUE)
 ```
 
+# Data related function
+
+Standardisation of a numeric variable:
+
+```{r cov.std}
+## simulation of a covariate
+covariate <- runif(100, 1, 10)
+## standardisation
+covariate_std <- cov.std(covariate)
+
+## the same covariate sampled in a different place but we want the same standardisation
+covariate_grid <- runif(100, 5, 10)
+## use the fonction covariate_grid_std
+covariate_grid_std <- cov.std.grid(covariate,
+                                   mean_x_obs = mean(covariate),
+                                   sd_x_obs = sd(covariate))
+```
+
+Create a vector of month in letter from a numeric vector
+
+```{r month.number2letter}
+## simulation of a vector of month
+month_numeric <- sample(1:12, size = 10)
+head(month_numeric)
+
+## transform to letters
+month_f <- month.number2letter(month_numeric)
+head(month_f)
+```
+
+In order to fill NA gaps in a vector with the previous value:
+
+```{r fill.NA.gaps}
+## simulation of a vector
+vec <- c(1, NA, 5, 6, 1, NA, 1)
+fill.NA.gaps(vec)
+
+## simulation of a vector
+vec <- c(1, NA, NA, 6, 1, NA, 1)
+fill.NA.gaps(vec)
+
+vec <- c(NA, 2, NA, 6, 1, NA, 1)
+fill.NA.gaps(vec, firstBack = TRUE)
+
+```
