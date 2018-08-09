@@ -57,3 +57,18 @@ LongLatToUTM <- function(x, y, zone){
 }
 
 
+#' # Fonction de conversion d'un format ddmm.m en degr?s d?cimaux
+#'
+#' @param x
+#'
+#' @return
+#' @export
+#'
+#' @examples
+conv_ISPTM_LongLat <- function(x) {
+  d <- floor(x/100)
+  m <- (x-(d*100))/60
+  return(d+m)
+}
+
+
