@@ -6,6 +6,8 @@ devtools::use_package('ggplot2') # add ggplot2 as a required package
 devtools::use_package('rmarkdown') # add rmarkdown as a required package
 devtools::use_package('sp') # add sp as a required package
 devtools::use_package('rgdal') # add rgdal as a required package
+devtools::use_git()
+usethis::browse_github_pat()
 
 
 ################################################################################

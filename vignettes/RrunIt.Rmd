@@ -66,8 +66,8 @@ save.plot(iris_plot,
 iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, colour = Species)) +
   geom_boxplot()
 
-# Print the plot 
-print_gg(iris_plot, ShowPlot = TRUE)
+# Print the plot
+show.ggplot2(iris_plot, ShowPlot = TRUE)
 ```
 
 
@@ -94,7 +94,7 @@ iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Speci
   geom_boxplot()
 
 # Print the plot
-print_gg(iris_plot, ShowPlot = TRUE)
+show.ggplot2(iris_plot, ShowPlot = TRUE)
 ```
 
 How to use continuois palette with ggplot2
@@ -105,7 +105,7 @@ iris_plot2 <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color =
   geom_point()
 
 # Print the plot
-print_gg(iris_plot2, ShowPlot = TRUE)
+show.ggplot2(iris_plot2, ShowPlot = TRUE)
 ```
 
 ## ggplot2 theme
@@ -119,7 +119,7 @@ iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Speci
   geom_boxplot()
 
 # Print the plot
-print_gg(iris_plot, ShowPlot = TRUE)
+show.ggplot2(iris_plot, ShowPlot = TRUE)
 ```
 
 For all plots in a R session:
@@ -130,14 +130,14 @@ theme_set(simple.ggplot2.theme())
 # Create a plot with legend
 iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Species)) +
   geom_boxplot()
-print_gg(iris_plot, ShowPlot = TRUE)
+show.ggplot2(iris_plot, ShowPlot = TRUE)
 
 # Create a plot with legend
 iris_plot2 <- ggplot(data = iris, aes(x = Species, y = Sepal.Length, color = Species)) +
   geom_boxplot()
 
 # Print the plot
-print_gg(iris_plot2, ShowPlot = TRUE)
+show.ggplot2(iris_plot2, ShowPlot = TRUE)
 ```
 
 # Data related function
@@ -185,7 +185,6 @@ fill.NA.gaps(vec)
 
 vec <- c(NA, 2, NA, 6, 1, NA, 1)
 fill.NA.gaps(vec, firstBack = TRUE)
-
 ```
 
 Compute summarizing statisitics of a vector:
@@ -202,12 +201,6 @@ compute.min_mean_sd_max(vec)
 ```
 
 ## Spaital data related function
-Transform Longitude and latitude coordinates into NAD83 given the zone
-```{r LongLat2NAD83}
-long <- 65
-lat <- -52
-LongLatToNAD83(x = long, y = lat, zone = 9)
-```
 
 
 # R session related function
@@ -228,7 +221,7 @@ cat0("X = ", X, " and Y = ", Y)
 cat(paste("X = ", X, " and Y = ", Y, "\n", sep=""))
 ```
 
-```{r cat0}
+```{r }
 ## install package if not already installed
 InstallPackages('devtools')
 ```
