@@ -1,12 +1,12 @@
 usethis::use_build_ignore("devtools_history.R") # add this file name to the build ignore
-devtools::use_package('grid') # add grid as a required package
-devtools::use_package('knitr') # add knitr as a required package
-devtools::use_package('scales') # add scales as a required package
-devtools::use_package('ggplot2') # add ggplot2 as a required package
-devtools::use_package('rmarkdown') # add rmarkdown as a required package
-devtools::use_package('sp') # add sp as a required package
-devtools::use_package('rgdal') # add rgdal as a required package
-
+usethis::use_package('grid') # add grid as a required package
+usethis::use_package('knitr') # add knitr as a required package
+usethis::use_package('scales') # add scales as a required package
+usethis::use_package('ggplot2') # add ggplot2 as a required package
+usethis::use_package('rmarkdown') # add rmarkdown as a required package
+usethis::use_package('sp') # add sp as a required package
+usethis::use_package('rgdal') # add rgdal as a required package
+usethis::use_package('ggmcmc') # add rgdal as a required package
 
 ################################################################################
 ### create a list of color palette and save it as internal use
@@ -64,7 +64,7 @@ l_cb_palette <-  list(
     )
 )
 
-devtools::use_data(l_cb_palette, internal = TRUE, overwrite = TRUE)
+usethis::use_data(l_cb_palette, internal = TRUE, overwrite = TRUE)
 
 ### build package with vignettes
 #devtools::install(build_vignettes = FALSE)

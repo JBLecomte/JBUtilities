@@ -9,12 +9,14 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
-Imports: grid,
+RoxygenNote: 6.1.1
+Imports: 
+    grid,
     knitr,
     scales,
     ggplot2,
     rmarkdown,
     sp,
-    rgdal
+    rgdal,
+    ggmcmc
 VignetteBuilder: knitr
