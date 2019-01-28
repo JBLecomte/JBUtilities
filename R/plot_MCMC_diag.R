@@ -14,7 +14,7 @@
 #' @return
 #' @export
 #'
-plot_MCMC_diag <- function(df_samples,
+plot_MCMC_diag <- function(df_samples_parameters,
                            suffix_files = NULL,
                            SavePlots = TRUE,
                            ShowPlots = TRUE,
@@ -27,7 +27,7 @@ plot_MCMC_diag <- function(df_samples,
   ##----------------------------------------------------------------------------
   if(density){
     cat0('Plot density')
-    density_plot <- ggs_density(df_samples, rug = TRUE)
+    density_plot <- ggs_density(df_samples_parameters, rug = TRUE)
     if(ShowPlots){
       print(density_plot)
     }
@@ -38,7 +38,7 @@ plot_MCMC_diag <- function(df_samples,
   ##----------------------------------------------------------------------------
   if(autocorr){
     cat0('Plot autocorrelation')
-    autocorr_plot <- ggs_autocorrelation(df_samples)
+    autocorr_plot <- ggs_autocorrelation(df_samples_parameters)
     if(ShowPlots){
       print(autocorr_plot)
     }
@@ -49,7 +49,7 @@ plot_MCMC_diag <- function(df_samples,
   ##----------------------------------------------------------------------------
   if(trace_plot){
     cat0('Plot traceplot')
-    trace_plot <- ggs_traceplot(df_samples)
+    trace_plot <- ggs_traceplot(df_samples_parameters)
     if(ShowPlots){
       print(trace_plot)
     }
@@ -60,7 +60,7 @@ plot_MCMC_diag <- function(df_samples,
   ##----------------------------------------------------------------------------
   if(Rhat){
     cat0('Plot R hat')
-    Rhat_plot <- ggs_Rhat(df_samples) + xlab("R_hat")
+    Rhat_plot <- ggs_Rhat(df_samples_parameters) + xlab("R_hat")
     if(ShowPlots){
       print(Rhat_plot)
     }
@@ -71,7 +71,7 @@ plot_MCMC_diag <- function(df_samples,
   ##----------------------------------------------------------------------------
   if(pair_plot){
     cat0('Plot pair plot')
-    pair_plot <- ggs_pairs(df_samples, lower = list(continuous = "density"))
+    pair_plot <- ggs_pairs(df_samples_parameters, lower = list(continuous = "density"))
     if(ShowPlots){
       print(pair_plot)
     }
@@ -82,7 +82,7 @@ plot_MCMC_diag <- function(df_samples,
   ##----------------------------------------------------------------------------
   if(geweke_plot){
     cat0('Plot geweke plot')
-    geweke_plot <- ggs_geweke(df_samples)
+    geweke_plot <- ggs_geweke(df_samples_parameters)
     if(ShowPlots){
       print(geweke_plot)
     }
