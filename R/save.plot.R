@@ -72,7 +72,7 @@ save.plot <- function(plot,
                bg = "transparent")
       }
 
-      if(output == ''){
+      if(is.null(output)){
         ggsave(plot = plot,
                filename = paste0(file_name, '.' , device),
                device = device,
