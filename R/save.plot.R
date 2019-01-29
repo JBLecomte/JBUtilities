@@ -37,7 +37,7 @@ save.plot <- function(plot,
 
   if(Save){
 
-    if(file.exists(paste0(path, '/', file_name)) & ErasePlot == FALSE){
+    if(file.exists(paste0(path, '/', file_name, '.', device)) & ErasePlot == FALSE){
 
       warning('plot already saved')
 
