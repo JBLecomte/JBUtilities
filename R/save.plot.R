@@ -26,16 +26,21 @@ save.plot <- function(plot,
                       height = NULL,
                       device = 'pdf',
                       Save = TRUE,
+                      ErasePlot = TRUE,
                       units = 'cm'){
 
   if(is.null(file_name)){
     file_name <- deparse(substitute(plot))
   }
 
+
+
   if(Save){
 
-    if(file.exists(paste0(path, file_name))){
+    if(file.exists(paste0(path, '/', file_name)) & ErasePlot == FALSE){
+
       warning('plot already saved')
+
     }else{
 
       if(!is.null(output)){
