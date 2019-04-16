@@ -4,10 +4,10 @@
 \alias{plot_MCMC_diag}
 \title{Function to make mcmc diag plots from a data.frame}
 \usage{
-plot_MCMC_diag(df_samples, suffix_files = NULL, SavePlots = TRUE,
-  ShowPlots = TRUE, density = TRUE, autocorr = TRUE,
-  trace_plot = TRUE, Rhat = TRUE, pair_plot = TRUE,
-  geweke_plot = FALSE)
+plot_MCMC_diag(df_samples_parameters, suffix_files = NULL,
+  SavePlots = TRUE, ShowPlots = TRUE, density = TRUE,
+  autocorr = TRUE, trace_plot = TRUE, Rhat = TRUE,
+  pair_plot = TRUE, geweke_plot = FALSE)
 }
 \description{
 Function to make mcmc diag plots from a data.frame

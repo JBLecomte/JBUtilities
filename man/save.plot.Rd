@@ -7,7 +7,7 @@ Save plot with specific needs i.e. plot for a Beamer presentation}
 \usage{
 save.plot(plot, file_name = NULL, path = NULL, output = NULL,
   scale = 1, width = NULL, height = NULL, device = "pdf",
-  Save = TRUE, units = "cm")
+  Save = TRUE, ErasePlot = TRUE, units = "cm")
 }
 \arguments{
 \item{plot}{a ggplot2 object}
