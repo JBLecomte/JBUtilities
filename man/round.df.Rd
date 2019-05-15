@@ -11,6 +11,9 @@
 
 \item{digits}{an integer}
 }
+\value{
+a rounded data.frame
+}
 \description{
 Round numeric values of a data.frame
 }

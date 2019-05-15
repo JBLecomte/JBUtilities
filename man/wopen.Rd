@@ -10,6 +10,9 @@ wopen(relative_path)
 \arguments{
 \item{relative_path}{a charachter string for the directory where to save the plot}
 }
+\value{
+open the relative path
+}
 \description{
 Open a windows explorer of the relative path
 Save plot with specific needs i.e. plot for a Beamer presentation

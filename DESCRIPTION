@@ -18,5 +18,6 @@ Imports:
     rmarkdown,
     sp,
     rgdal,
-    ggmcmc
+    ggmcmc,
+    here
 VignetteBuilder: knitr

@@ -2,7 +2,7 @@
 #'
 #' @param object
 #'
-#' @return
+#' @return return object from a list
 #' @export
 unpack.list <- function(object) {
   for(.x in names(object)){

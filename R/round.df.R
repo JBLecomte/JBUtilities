@@ -3,7 +3,7 @@
 #' @param df a data.frame
 #' @param digits an integer
 #'
-#' @return
+#' @return a rounded data.frame
 #' @export
 round.df <- function(df, digits) {
   nums <- vapply(df, is.numeric, FUN.VALUE = logical(1))

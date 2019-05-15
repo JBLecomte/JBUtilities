@@ -11,7 +11,7 @@
 #' @param geweke_plot
 #' @import ggplot2
 #' @import ggmcmc
-#' @return
+#' @return a list of mcmc diagnostic plot
 #' @export
 #'
 plot_MCMC_diag <- function(df_samples_parameters,

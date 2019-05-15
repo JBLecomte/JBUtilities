@@ -9,6 +9,9 @@ plot_MCMC_diag(df_samples_parameters, suffix_files = NULL,
   autocorr = TRUE, trace_plot = TRUE, Rhat = TRUE,
   pair_plot = TRUE, geweke_plot = FALSE)
 }
+\value{
+a list of mcmc diagnostic plot
+}
 \description{
 Function to make mcmc diag plots from a data.frame
 }

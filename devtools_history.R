@@ -7,6 +7,7 @@ usethis::use_package('rmarkdown') # add rmarkdown as a required package
 usethis::use_package('sp') # add sp as a required package
 usethis::use_package('rgdal') # add rgdal as a required package
 usethis::use_package('ggmcmc') # add rgdal as a required package
+usethis::use_package('here') # add rgdal as a required package
 
 ################################################################################
 ### create a list of color palette and save it as internal use

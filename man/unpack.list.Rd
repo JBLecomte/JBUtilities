@@ -9,6 +9,9 @@ unpack.list(object)
 \arguments{
 \item{object}{}
 }
+\value{
+return object from a list
+}
 \description{
 Title
 }
