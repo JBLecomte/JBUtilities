@@ -7,10 +7,19 @@
 #' @export
 #'
 wopen <- function(relative_path){
+
   options(warn=-1)
   relative_path <-  paste0( here::here(), '/', relative_path)
 
-  y <- gsub("/", "\\\\", relative_path)
-  shell(paste0("explorer ", y), intern = FALSE)
+  if(get.os() == 'windows'){
+    y <- gsub("/", "\\\\", relative_path)
+    shell(paste0("explorer ", y), intern = FALSE)
+  }
+  if(get.os() == 'linux'){
+    system(paste0("xdg-open ", relative_path),
+           intern = TRUE,
+           ignore.stdout = TRUE,
+           ignore.stderr = TRUE)
+  }
   options(warn=0)
 }
