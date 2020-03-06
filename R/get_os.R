@@ -4,7 +4,7 @@
 #' @export
 #'
 #' @examples
-get.os <- function(){
+get_os <- function(){
   sysinf <- Sys.info()
   if (!is.null(sysinf)){
     os <- sysinf['sysname']

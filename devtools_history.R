@@ -9,13 +9,13 @@ devtools::use_package('rgdal') # add rgdal as a required package
 devtools::use_git()
 usethis::browse_github_pat()
 
-
 ################################################################################
 ### create a list of color palette and save it as internal use
 
 
 l_cb_palette <-  list(
-  cb.grey.pal = c("#E69F00",    # Gold,
+  cb.grey.pal = c(
+    "#E69F00",    # Gold,
     "#56B4E9",  # Light blue,
     "#D55E00",  # Red
     "#009E73",  # Green,
@@ -66,11 +66,17 @@ l_cb_palette <-  list(
     )
 )
 
+cb_palette <- l_cb_palette[[1]]
+image(1:length(cb_palette), 1, as.matrix(1:length(cb_palette)),
+      col = cb_palette,
+      xlab = paste(name, palattr), ylab = "", xaxt = "n",
+      yaxt = "n", bty = "n")
+
 devtools::use_data(l_cb_palette, internal = TRUE, overwrite = TRUE)
 
 ### build package with vignettes
 #devtools::install(build_vignettes = FALSE)
-# usethis::use_vignette("comment-utiliser-mon-package")
+usethis::use_vignette(name = 'palette', title = 'Palette')
 
 devtools::document()
 devtools::install(build_vignettes = TRUE)

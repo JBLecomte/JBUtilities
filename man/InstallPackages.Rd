@@ -9,6 +9,9 @@ InstallPackages(Packages)
 \arguments{
 \item{Packages}{}
 }
+\value{
+
+}
 \description{
 Install package if not present
 }

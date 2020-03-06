@@ -6,7 +6,7 @@
 #'
 #' @return a palette color
 #' @export
-cb.pal <- function (name, n, type = c("discrete", "continuous"))
+cb_pal <- function (name, n, type = c("discrete", "continuous"))
 {
   type <- match.arg(type)
   pal <- l_cb_palette[[name]]

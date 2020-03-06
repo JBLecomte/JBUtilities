@@ -17,7 +17,7 @@
 #'
 #' @examples
 #' @export
-save.plot <- function(plot,
+save_plot <- function(plot,
                       file_name = NULL,
                       path = NULL,
                       output = NULL,

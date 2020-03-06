@@ -9,6 +9,9 @@ cat0(...)
 \arguments{
 \item{...}{}
 }
+\value{
+
+}
 \description{
 Title
 }

@@ -5,7 +5,7 @@
 #'
 #' @return
 #' @export
-fill.NA.gaps <- function(x, firstBack = FALSE) {
+fill_NA_gaps <- function(x, firstBack = FALSE) {
   ## NA's in a vector or factor are replaced with last non-NA values
   ## If firstBack is TRUE, it will fill in leading NA's with the first
   ## non-NA value. If FALSE, it will not change leading NA's.
