@@ -19,6 +19,6 @@ library(JBUtilities)
 ```
 
 
-```{r setup}
-JBUtilities::cb.pal()
+```{r cb-pal}
+JBUtilities::cb_pal()
 ```
