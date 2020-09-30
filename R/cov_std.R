@@ -4,7 +4,7 @@
 #'
 #' @return
 #' @export
-cov.std <- function(x) {
+cov_std <- function(x) {
 
   if(is.numeric(x) == FALSE){
     stop('x is not numeric')
@@ -21,7 +21,7 @@ cov.std <- function(x) {
 #' @param sd_x_obs
 #'
 #' @export
-cov.std.grid <- function(x, mean_x_obs, sd_x_obs) {
+cov_std_grid <- function(x, mean_x_obs, sd_x_obs) {
 
   if(is.numeric(x) == FALSE){
     stop('x is not numeric')

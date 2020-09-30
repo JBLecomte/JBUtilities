@@ -11,13 +11,14 @@
 #' @param device a charachter string for the type of devince to be saved pdf, png, jpeg...
 #' @param Save a boolean, if FALSE plot is not saved
 #' @param units a boolean, if FALSE plot is not saved
+#' @param ErasePlot a boolean, if FALSE plot is not saved
 #'
 #' @return save a plot
 #' @import ggplot2
 #'
 #' @examples
 #' @export
-save.plot <- function(plot,
+save_plot <- function(plot,
                       file_name = NULL,
                       path = NULL,
                       output = NULL,
@@ -25,7 +26,6 @@ save.plot <- function(plot,
                       width = NULL,
                       height = NULL,
                       device = 'pdf',
-                      Save = TRUE,
                       ErasePlot = TRUE,
                       units = 'cm'){
 
@@ -33,9 +33,7 @@ save.plot <- function(plot,
     file_name <- deparse(substitute(plot))
   }
 
-
-
-  if(Save){
+  if(ErasePlot){
 
     if(file.exists(paste0(path, '/', file_name, '.', device)) & ErasePlot == FALSE){
 

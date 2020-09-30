@@ -1,0 +1,228 @@
+---
+title: "How to run JBUtilities functions"
+author: "Jean-Baptiste Lecomte"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+graphics: yes
+vignette: >
+ %\VignetteIndexEntry{How to run JBUtilities functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+  
+  
+  ```{r setup, include = FALSE}
+library('JBUtilities')
+library('ggplot2')
+knitr::opts_chunk$set(
+collapse = TRUE,
+comment = "#>"
+)
+```
+
+# GGplot2 related function
+
+## Extract legend from ggplot2 object
+
+```{r extract.plot.legend}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, colour = Species)) +
+  geom_boxplot()
+# print(iris_plot)
+
+# Extract the legend plot
+iris_plot_legend <- extract.plot.legend(iris_plot,
+                                        Save = TRUE,
+                                        device = 'png',
+                                        width = 5,
+                                        height = 5)
+```
+
+The png file saved:
+
+```{r legend, echo = FALSE, message = FALSE}
+library(knitr)
+knitr::include_graphics('legend.png', dpi = 300)
+```
+
+## Save plot
+
+```{r save.plot}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, colour = Species)) +
+  geom_boxplot()
+
+# Extract the legend plot
+save.plot(iris_plot,
+          Save = TRUE,
+          output = 'Beamer',
+          width = 5,
+          height = 5)
+```
+
+## Print plot
+```{r print.plot}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, colour = Species)) +
+  geom_boxplot()
+
+# Print the plot
+show.ggplot2(iris_plot, ShowPlot = TRUE)
+```
+
+
+## Color blind palette
+
+Available color blind palette:
+
+```{r cb.pal, echo=FALSE}
+l_cb_palette <- JBUtilities:::l_cb_palette
+
+JBUtilities:::list_plotter(l_cb_palette,
+                           names = names(l_cb_palette),
+                           package_name = 'JBUtilities')
+
+
+```
+
+How to use discrete palette with ggplot2
+
+```{r cb.grey.pal}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Species)) +
+  scale_color_manual(values = cb.pal(n = 3, name = "cb.grey.pal")) +
+  geom_boxplot()
+
+# Print the plot
+show.ggplot2(iris_plot, ShowPlot = TRUE)
+```
+
+How to use continuois palette with ggplot2
+```{r cb.pal.continuous}
+# Create a plot with legend
+iris_plot2 <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Sepal.Length)) +
+  scale_color_gradientn(colours = cb.pal(name = "cb.map.blue.red.pal",  type = "continuous")) +
+  geom_point()
+
+# Print the plot
+show.ggplot2(iris_plot2, ShowPlot = TRUE)
+```
+
+## ggplot2 theme
+
+For one plot :
+
+```{r ggplot2.theme}
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Species)) +
+  simple.ggplot2.theme() +
+  geom_boxplot()
+
+# Print the plot
+show.ggplot2(iris_plot, ShowPlot = TRUE)
+```
+
+For all plots in a R session:
+
+```{r ggplot2.theme2}
+theme_set(simple.ggplot2.theme())
+
+# Create a plot with legend
+iris_plot <- ggplot(data = iris, aes(x = Species, y = Sepal.Width, color = Species)) +
+  geom_boxplot()
+show.ggplot2(iris_plot, ShowPlot = TRUE)
+
+# Create a plot with legend
+iris_plot2 <- ggplot(data = iris, aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_boxplot()
+
+# Print the plot
+show.ggplot2(iris_plot2, ShowPlot = TRUE)
+```
+
+# Data related function
+
+Standardisation of a numeric variable:
+
+```{r cov.std}
+## simulation of a covariate
+covariate <- runif(100, 1, 10)
+## standardisation
+covariate_std <- cov.std(covariate)
+head(covariate_std)
+
+## the same covariate sampled in a different place but we want the same standardisation
+covariate_grid <- runif(100, 5, 10)
+## use the fonction covariate_grid_std
+covariate_grid_std <- cov.std.grid(covariate,
+                                   mean_x_obs = mean(covariate),
+                                   sd_x_obs = sd(covariate))
+head(covariate_grid_std)
+```
+
+Create a vector of month in letter from a numeric vector
+
+```{r month.number2letter}
+## simulation of a vector of month
+month_numeric <- sample(1:12, size = 10)
+head(month_numeric)
+
+## transform to letters
+month_f <- month.number2letter(month_numeric)
+head(month_f)
+```
+
+In order to fill NA gaps in a vector with the previous value:
+
+```{r fill.NA.gaps}
+## simulation of a vector
+vec <- c(1, NA, 5, 6, 1, NA, 1)
+fill.NA.gaps(vec)
+
+## simulation of a vector
+vec <- c(1, NA, NA, 6, 1, NA, 1)
+fill.NA.gaps(vec)
+
+vec <- c(NA, 2, NA, 6, 1, NA, 1)
+fill.NA.gaps(vec, firstBack = TRUE)
+```
+
+Compute summarizing statisitics of a vector:
+
+```{r compute summary vec}
+## simulation of a vector
+vec <- runif(100,1,1000)
+
+## compute quantiles
+compute.q025_q25_q50_q75_q975(vec)
+
+## compute min, max, sd and mean
+compute.min_mean_sd_max(vec)
+```
+
+## Spaital data related function
+
+
+# R session related function
+
+Which Operating System is in use.
+
+```{r get os}
+## function to get the os of the computer where R is executed
+get.os()
+```
+
+```{r cat0}
+##  ## Makes it so you can write this:
+X <- 2
+Y <- 3
+cat0("X = ", X, " and Y = ", Y)
+## instead of this:
+cat(paste("X = ", X, " and Y = ", Y, "\n", sep=""))
+```
+
+```{r }
+## install package if not already installed
+InstallPackages('devtools')
+```
+

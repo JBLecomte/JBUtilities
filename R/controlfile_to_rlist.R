@@ -4,7 +4,7 @@
 #'
 #' @return
 #' @export
-controlfile.to.rlist <- function(fn){
+controlfile_to_rlist <- function(fn){
   # Read in the data from the REP file given as 'fn'.
   # File structure:
   # It is assumed that each text label (variable name) will be on its own line,

@@ -9,6 +9,9 @@ list_plotter(color_list, names, package_name)
 \arguments{
 \item{package_name}{}
 }
+\value{
+
+}
 \description{
 Function to plot palette within a list
 }

@@ -5,7 +5,7 @@
 #'
 #' @return a rounded data.frame
 #' @export
-round.df <- function(df, digits) {
+round_df <- function(df, digits) {
   nums <- vapply(df, is.numeric, FUN.VALUE = logical(1))
 
   df[,nums] <- round(df[,nums], digits = digits)

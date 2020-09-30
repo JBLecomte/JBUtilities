@@ -2,7 +2,7 @@
 #' @import ggplot2
 #' @return
 #' @export
-simple.ggplot2.theme <- function (base_size = 11,
+simple_ggplot2_theme <- function (base_size = 11,
                                   base_family = '') {
 
   ### Build theme on the ggplot2 theme black and white : theme_bw

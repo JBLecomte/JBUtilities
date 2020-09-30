@@ -4,7 +4,7 @@
 #'
 #' @return
 #' @export
-month.number2letter <- function(month_number_vec){
+month_number2letter <- function(month_number_vec){
 
   if(!is.numeric(month_number_vec)){
     month_number_vec <- as.numeric(as.character(month_number_vec))

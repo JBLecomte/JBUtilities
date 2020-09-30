@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' @export
-extract.plot.legend <- function(gplot,
+extract_plot_legend <- function(gplot,
                                 width = 5 ,
                                 height = 5,
                                 device = 'pdf',
